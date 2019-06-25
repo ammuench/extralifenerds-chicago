@@ -1,0 +1,43 @@
+@import "variables";
+
+.c_header {
+    background-color: $black;
+    color: $white;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+
+    margin-bottom: 0;
+    padding: 16px;
+
+    position: sticky;
+    top: 0;
+}
+
+.c_header__title {
+    margin: 0;
+}
+
+.c_header__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    justify-self: end;
+}
+
+.c_header__linkItem {
+    float: left;
+
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
+}
+
+.c_header__linkItem__link {
+    color: $white;
+    font-family: $font-shdg;
+    font-weight: bold;
+}

@@ -1,0 +1,53 @@
+@import "variables";
+
+.c_hero {
+    background-color: $accent-red;
+
+    height: 500px;
+
+    display: grid;
+    grid-template: 1fr / 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.c_panel {
+    background-color: $white;
+
+    height: 500px;
+
+    display: grid;
+    grid-template-areas: "text imagearea";
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    justify-items: center;
+
+    &.c_panel--dark {
+        background-color: $black;
+
+        .c_panel__text, .c_panel__text__copy {
+            color: $white;
+        }       
+    }
+
+    &.c_panel--reverse {
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: "imagearea text";
+    }
+}
+
+.c_panel__text {
+    grid-area: text;
+
+    padding: 16px;
+}
+
+.c_panel__image {
+    grid-area: imagearea;
+
+    background-size: cover;
+
+    height: 100%;
+    width: 100%;
+}

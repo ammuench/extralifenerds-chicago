@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset */
+@import "~marx-css/css/marx.min.css";
+
+/* Vendor */
+@import url("https://fonts.googleapis.com/css?family=Raleway:700,700i|Taviraj:400,400i,600,600i|Titillium+Web&display=swap");
+
+/* Variables */
+@import "styles/variables/variables";
+
+/* Global */
+@import "styles/global/global";
+
+/* Utilities */
+@import "styles/utilities/hdg";
