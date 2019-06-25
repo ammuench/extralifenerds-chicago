@@ -1,0 +1,35 @@
+<div class="c_hero">
+    <h2 class="u_hdg2 c_hero__title">our team</h2>
+</div>
+<div class="c_teamContainer">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales ligula eu tempus rhoncus. Fusce quis felis
+        rutrum, ultricies odio non, volutpat orci. Donec varius dapibus malesuada. Aenean ornare neque risus, eget
+        luctus magna elementum nec. Ut ullamcorper lectus lacinia, sodales dolor vitae, semper mi. Proin a dolor
+        placerat, efficitur velit ut, luctus lacus. Nullam in risus laoreet, sollicitudin sem sit amet, consectetur
+        erat.
+    </p>
+    <!-- <h3 class="u_hdg3 c_teamContainer__subHdg">Roster</h3> -->
+    <div *ngIf="!team">
+        <div class="c_loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="c_teamGrid" *ngIf="team">
+        <div *ngFor="let member of roster" class="c_teamGrid__member">
+            <img class="c_teamGrid__member__photo" [src]="member.avatarImageURL">
+            <div class="c_teamGrid__member__info">
+                <h5 class="u_hdg5 c_teamGrid__member__name">{{member.displayName}}</h5>
+                <dl class="c_teamGrid__member__donationInfo">
+                    <dt class="c_teamGrid__member__donationInfo__label">Donation Goal</dt>
+                    <dd class="c_teamGrid__member__donationInfo__amt">${{member.fundraisingGoal}}</dd>
+                    <dt class="c_teamGrid__member__donationInfo__label">Amount Raised</dt>
+                    <dd class="c_teamGrid__member__donationInfo__amt">${{member.sumDonations}}</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

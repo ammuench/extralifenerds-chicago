@@ -1,0 +1,16 @@
+.c_hero {
+    background-color: $accent-red;
+
+    height: 100px;
+
+    display: grid;
+    grid-template: 1fr / 1fr;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+.c_hero__title {
+    font-weight: bold;
+    margin: 0;
+}

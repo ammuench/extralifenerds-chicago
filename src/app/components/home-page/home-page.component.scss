@@ -1,14 +1,51 @@
 @import "variables";
 
-.c_hero {
+.c_homeHero {
     background-color: $accent-red;
 
-    height: 500px;
+    height: 300px;
 
     display: grid;
-    grid-template: 1fr / 1fr;
+    grid-template: 1fr 1fr / 1fr;
     align-items: center;
     justify-items: center;
+}
+
+.c_donationBar {
+    height: 80px;
+    width: 500px;
+
+    border-radius: 50px;
+
+    border: double 6px $black;
+
+    overflow: hidden;
+    
+    display: grid;
+    grid-template: 1fr / 1fr;
+    justify-items: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.c_donationBar__text {
+    color: $white;
+    font-family: $font-shdg;
+    font-size: 2rem;
+    font-weight: bold;
+
+    z-index: 1;
+}
+
+.c_donationBar__fill {
+    background: $black;
+    
+    position: absolute;
+    left: 0;
+    
+    height: 100%;
+    width: 33%;
 }
 
 .c_panel {

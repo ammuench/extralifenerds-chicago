@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MissionPageComponent } from './components/mission-page/mission-page.component';
-import { AboutPageComponent } from './components/about-page/about-page.component';
+import { TeamPageComponent } from './components/team-page/team-page.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +16,11 @@ import { AboutPageComponent } from './components/about-page/about-page.component
     HomePageComponent,
     FooterComponent,
     MissionPageComponent,
-    AboutPageComponent
+    TeamPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

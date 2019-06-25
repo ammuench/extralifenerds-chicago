@@ -1,0 +1,67 @@
+@import "variables";
+
+.c_teamContainer {
+    padding: 2rem;
+}
+
+.c_teamContainer__subHdg {
+    font-weight: bold;
+}
+
+.c_teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 50px;
+    justify-content: center;
+
+    padding-top: 1rem;
+}
+
+.c_teamGrid__member {
+    background-color: $white;
+    
+    width: 200px;
+
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto 1fr;
+
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
+
+    box-sizing: content-box;
+
+    position: relative;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        top: -10px;
+    }
+}
+
+.c_teamGrid__member__photo {
+    height: 100%;
+    width: 100%;
+}
+
+.c_teamGrid__member__info {
+    border-top: solid 10px $accent-red;
+
+    padding: 1rem;
+}
+
+.c_teamGrid__member__name {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.c_teamGrid__member__donationInfo__label {
+    font-family: $font-shdg;
+    font-weight: bold;
+}
+
+.c_teamGrid__member__donationInfo__amt {
+    margin-left: 0;
+
+    font-family: $font-shdg;
+}
