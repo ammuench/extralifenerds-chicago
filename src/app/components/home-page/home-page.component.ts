@@ -1,5 +1,6 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { getTeamInfo } from 'extra-life-api';
+import { Component, OnInit } from '@angular/core';
+import { getTeamInfo, IExtraLifeTeam } from 'extra-life-api';
+import { from, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -7,23 +8,13 @@ import { getTeamInfo } from 'extra-life-api';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  public donationGoal = 0;
-  public donationAmt = 0;
+  public team: Observable<IExtraLifeTeam>;
 
-  constructor(private zone: NgZone) { }
+  constructor() { }
 
-  async ngOnInit() {
-    // Process promise
-    this.zone.run(async () => {
-      const team = await getTeamInfo(44504, false);
-      this.donationAmt = team.sumDonations;
-      this.donationGoal = team.fundraisingGoal;
-
-      console.log({
-        amt: this.donationAmt,
-        goal: this.donationGoal,
-      });
-    });
+  ngOnInit() {
+    this.team = from(getTeamInfo(44504, false));
+    this.team.subscribe();
   }
 
 }
