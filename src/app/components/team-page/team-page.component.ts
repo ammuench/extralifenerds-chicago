@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getTeamInfo, getTeamRoster, IRosterList, IExtraLifeTeam, getUserInfo, IExtraLifeUser } from 'extra-life-api';
+import { AsyncApiCallHelperService } from 'src/app/services/async-ssr-helper.service';
 
 @Component({
   selector: 'app-team-page',
@@ -10,12 +11,16 @@ export class TeamPageComponent implements OnInit {
   public team: IExtraLifeTeam;
   public roster: IExtraLifeUser[] = [];
 
-  constructor() { }
+  constructor(private processor: AsyncApiCallHelperService) { }
 
   async ngOnInit() {
     try {
-      this.team = await getTeamInfo('44504');
-      this.roster = this.team.members;
+      this.processor
+        .doTask(getTeamInfo(44504))
+        .subscribe(result => {
+          this.team = result;
+          this.roster = this.team.members;
+        });
     } catch (e) {
       console.log(e);
     }
