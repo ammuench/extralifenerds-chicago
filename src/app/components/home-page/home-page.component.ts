@@ -1,6 +1,5 @@
-import { Component, OnInit, NgZone } from '@angular/core';
-import { getTeamInfo, IExtraLifeTeam } from 'extra-life-api';
-import { from, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+
 import { AsyncApiCallHelperService } from 'src/app/services/async-ssr-helper.service';
 import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
 import { RegionalTeamService } from 'src/app/services/regional-team.service.service';
