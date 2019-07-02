@@ -2,9 +2,9 @@
     <h2 class="u_hdg2 c_donationHero__title">play games, heal kids</h2>
     <div class="c_donationBar">
         <div class="c_donationBar__text">
-            ${{(team)?.sumDonations}} / ${{(team)?.fundraisingGoal}}
+            ${{(fundraising)?.current}} / ${{(fundraising)?.goal}}
         </div>
-        <div class="c_donationBar__fill"></div>
+        <div class="c_donationBar__fill" [ngStyle]="{width: getFillPercent()}"></div>
     </div>
 </div>
 <div class="c_panel">

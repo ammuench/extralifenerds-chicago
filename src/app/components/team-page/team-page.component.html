@@ -10,7 +10,7 @@
         erat.
     </p>
     <!-- <h3 class="u_hdg3 c_teamContainer__subHdg">Roster</h3> -->
-    <div *ngIf="!team">
+    <div *ngIf="!roster">
         <div class="c_loader">
             <div></div>
             <div></div>
@@ -18,7 +18,7 @@
             <div></div>
         </div>
     </div>
-    <div class="c_teamGrid" *ngIf="team">
+    <div class="c_teamGrid" *ngIf="roster">
         <div *ngFor="let member of roster" class="c_teamGrid__member">
             <img class="c_teamGrid__member__photo" [src]="member.avatarImageURL">
             <div class="c_teamGrid__member__info">

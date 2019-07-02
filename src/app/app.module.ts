@@ -1,5 +1,6 @@
 import { BrowserModule, Meta, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,22 +11,25 @@ import { MissionPageComponent } from './components/mission-page/mission-page.com
 import { TeamPageComponent } from './components/team-page/team-page.component';
 
 import { AsyncApiCallHelperService } from './services/async-ssr-helper.service';
+import { RegionalTeamService } from './services/regional-team.service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
     HeaderComponent,
     HomePageComponent,
-    FooterComponent,
     MissionPageComponent,
     TeamPageComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule,
   ],
   providers: [
     AsyncApiCallHelperService,
+    RegionalTeamService,
     Meta,
     Title
   ],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getTeamInfo, getTeamRoster, IRosterList, IExtraLifeTeam, getUserInfo, IExtraLifeUser } from 'extra-life-api';
 import { AsyncApiCallHelperService } from 'src/app/services/async-ssr-helper.service';
+import { RegionalTeamService } from 'src/app/services/regional-team.service.service';
 
 @Component({
   selector: 'app-team-page',
@@ -8,18 +9,16 @@ import { AsyncApiCallHelperService } from 'src/app/services/async-ssr-helper.ser
   styleUrls: ['./team-page.component.scss']
 })
 export class TeamPageComponent implements OnInit {
-  public team: IExtraLifeTeam;
   public roster: IExtraLifeUser[] = [];
 
-  constructor(private processor: AsyncApiCallHelperService) { }
+  constructor(private processor: AsyncApiCallHelperService, private regionalService: RegionalTeamService) { }
 
   async ngOnInit() {
     try {
       this.processor
-        .doTask(getTeamInfo(44504))
+        .doTask(this.regionalService.getChicagoRoster())
         .subscribe(result => {
-          this.team = result;
-          this.roster = this.team.members;
+          this.roster = result;
         });
     } catch (e) {
       console.log(e);
