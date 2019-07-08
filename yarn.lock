@@ -316,6 +316,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@ngrx/store@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.0.1.tgz#5391498d50978ff1bfdbf4e5b04cb647677a5168"
+  integrity sha512-B6HY8TCFZ4+bUfJAJatF42+F33Qboo7zKc+gxTi6eEioKvNqWkb22K4De5HV2j/l/blXvMOPMSO1Rf/sGqID0w==
+
 "@ngtools/webpack@8.0.4":
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-8.0.4.tgz#ba2dd453940d8bc10b7a75604aaadc2b939ba030"

@@ -12,6 +12,8 @@ import { TeamPageComponent } from './components/team-page/team-page.component';
 
 import { AsyncApiCallHelperService } from './services/async-ssr-helper.service';
 import { RegionalTeamService } from './services/regional-team.service.service';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { RegionalTeamService } from './services/regional-team.service.service';
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [
     AsyncApiCallHelperService,
