@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, pluck } from 'rxjs/operators';
 import { Observable, from, combineLatest } from 'rxjs';
 import { IExtraLifeUser, getTeamInfo } from 'extra-life-api';
+import { DonationState } from '../ngrx/reducers/donations.reducer';
 
 export interface NerderyTeam {
   id: string;
@@ -64,7 +65,7 @@ export class RegionalTeamService {
     });
   }
 
-  public getChicagoDonations(): Observable<{goal: number, current: number}> {
+  public getChicagoDonations(): Observable<DonationState> {
     const chiFundraisingGoal$ =
       this.http.get<NerderyTeam>(this._getTeamUrl(38961))
         .pipe(pluck('subTeams'))

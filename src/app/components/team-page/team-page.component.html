@@ -9,17 +9,8 @@
         placerat, efficitur velit ut, luctus lacus. Nullam in risus laoreet, sollicitudin sem sit amet, consectetur
         erat.
     </p>
-    <!-- <h3 class="u_hdg3 c_teamContainer__subHdg">Roster</h3> -->
-    <div *ngIf="!roster">
-        <div class="c_loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <div class="c_teamGrid" *ngIf="roster">
-        <div *ngFor="let member of roster" class="c_teamGrid__member">
+    <div class="c_teamGrid">
+        <div *ngFor="let member of roster | async" class="c_teamGrid__member">
             <img class="c_teamGrid__member__photo" [src]="member.avatarImageURL">
             <div class="c_teamGrid__member__info">
                 <h5 class="u_hdg5 c_teamGrid__member__name">{{member.displayName}}</h5>
